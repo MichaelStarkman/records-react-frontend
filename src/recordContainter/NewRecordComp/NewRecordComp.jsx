@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 const NewRecordComp = (props) => {
     const [showing, setShowing] = useState(false)
+    const toggleShowing = () => {
+        setShowing(!showing)
+    }
+    const [isValidState, setIsValidState] = useState({valid: true, message: ""})
     const [newRecord, setNewRecord] = useState({
         artist: "",
         album: "",
         release_date: 0
     })
-    const toggleShowing = () => {
-        setShowing(!showing)
-    }
-    const [isValidState, setIsValidState] = useState({valid: true, message: ""})
     const handleInputChange = (e) => {
         setNewRecord({
             ...newRecord,
